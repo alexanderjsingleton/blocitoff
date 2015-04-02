@@ -1,11 +1,8 @@
 class ItemsController < ApplicationController
-  def index
-  end
 
-    def show
-    end
 
-   def new
+
+   def create
     @list = List.find(params[:list_id])
     @item = Item.new(item_params)
     @item.list = @list
