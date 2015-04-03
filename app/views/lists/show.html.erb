@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @list.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @list.description %>
-</p>
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<div class="row">
+  <div class="col-md-4"> 
+    <h2 class="text-center"><%= @list.title if @list.title %></h2>
+    <h5 class="text-center"><%= @list.description if @list.description %></h5>
+    <%= render partial: 'items/item', locals: { list: @list } %>
+ 
+    <%= render partial: 'items/form', locals: { list: @list } %>
+  </div>
+</div>
