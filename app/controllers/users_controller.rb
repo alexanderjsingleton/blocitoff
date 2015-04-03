@@ -1,25 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @lists = current_user.lists
-  end
 
-  def new
-    @list = List.new
-  end
-
-
-  def create
-    @list = current_user.lists.build(list_params)
-    
-    if @list.save
-     redirect_to list_path(@list), notice: "List saved."
-    else
-      flash[:error] = "Error saving list - please try again."
-      render :new
-    end
-  end
 
   def update
     if current_user.update_attributes(user_params)
