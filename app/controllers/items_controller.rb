@@ -15,6 +15,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def new
+      @list = List.find(params[:list_id])
+      @item = Item.new(item_params)
+      @item.list = @list
+
+      if @item.save
+       redirect_to list_path(@list), notice: "ToDo saved."
+      else
+        flash[:error] = "Error saving ToDo - please try again."
+        render :new
+      end
+    end
+
 
 
   private
