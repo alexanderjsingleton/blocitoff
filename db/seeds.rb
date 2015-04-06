@@ -25,19 +25,18 @@ require 'faker'
  10.times do
    list = List.create!(
      user: users.sample,
-     title:  Faker::Lorem.words(5),
+     title:  Faker::Lorem.sentence(5),
      description:   Faker::Lorem.sentence(2)
    )
  end
 
  lists = List.all
 
- 
  # Create Items
  25.times do
    items = Item.create!(
      list: lists.sample,
-     name: Faker::Lorem.words(5)
+     name: Faker::Lorem.sentence(5)
    )
  end
 
