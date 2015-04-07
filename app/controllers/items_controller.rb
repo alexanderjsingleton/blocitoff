@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
     name = @item.name
-    authorize @item
+  
 
     if @item.destroy
       flash[:notice] = "Item was removed."
