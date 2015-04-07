@@ -26,7 +26,8 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-  
+
+
   def destroy
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
@@ -34,11 +35,9 @@ class ItemsController < ApplicationController
   
 
     if @item.destroy
-      flash[:notice] = "Item was removed."
-      redirect_to list_path(@list)
+      flash[:notice] = "Item was deleted successfully."
     else
       flash[:error] = "Item couldn't be deleted.  Please try again."
-      redirect_to list_path(@list)
     end
 
     respond_to do |format|
@@ -46,7 +45,7 @@ class ItemsController < ApplicationController
       format.js 
     end
     
-  end
+
 
 
 
