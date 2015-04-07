@@ -17,7 +17,7 @@ Blocitoff::Application.routes.draw do
   resources :users, only: [:update, :show]
 
   resources :lists do
-    resources :items, only: [:create]
+    resources :items, only: [:create, :destroy]
   end
   
   authenticated :user do

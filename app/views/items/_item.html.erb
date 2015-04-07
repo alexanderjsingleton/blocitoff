@@ -1,7 +1,7 @@
-<div class="media">
-    <ul>
-      <% list.items.each do |item| %>
-        <li><%= item.name %></li>
+<ul class="list-group">
+  <ul>
+    <% list.items.each do |item| %>
+      <li class="list-group-item bloc-item"><%= item.name %>
+        <%= link_to " ", list_item_path(item.list, item), method: :delete, class: 'glyphicon glyphicon-remove glyph-right glyph-danger' %></li>
       <% end %>
-    </ul>
-</div>
+  </ul>     
