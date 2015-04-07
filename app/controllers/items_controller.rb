@@ -41,10 +41,11 @@ class ItemsController < ApplicationController
       redirect_to list_path(@list)
     end
 
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html { redirect_to list_path(@list) }
+      format.js
+    end
+    
   end
 
 

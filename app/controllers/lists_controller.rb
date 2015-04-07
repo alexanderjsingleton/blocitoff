@@ -74,10 +74,16 @@ class ListsController < ApplicationController
       redirect_to root_path
     end
 
+    # respond_to do |format|
+    #   format.html
+    #   fotmat.js
+    # end
+      
     respond_to do |format|
-      format.html
-      fotmat.js
+      format.html { redirect_to root_path }
+      format.js
     end
+
   end
 
   private
