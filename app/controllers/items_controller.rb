@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
       format.html { redirect_to list_path(@list) }
       format.js 
     end
+  end
     
 
 
