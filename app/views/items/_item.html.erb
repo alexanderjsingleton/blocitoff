@@ -2,6 +2,6 @@
   <ul>
     <% list.items.each do |item| %>
       <li class="list-group-item bloc-item"><%= item.name %>
-        <%= link_to " ", list_item_path(item.list, item), method: :delete, class: 'glyphicon glyphicon-remove glyph-right glyph-danger' %></li>
+        <%= link_to " ", list_item_path(item.list, item), method: :delete, class: 'glyphicon glyphicon-ok glyph-right glyph-danger', remote: true %>
       <% end %>
   </ul>     
