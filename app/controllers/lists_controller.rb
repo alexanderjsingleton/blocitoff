@@ -54,11 +54,29 @@ class ListsController < ApplicationController
 
   # DELETE /lists/1
   # DELETE /lists/1.json
+  # def destroy
+  #   @list.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   def destroy
-    @list.destroy
+    @list = List.find(params[:list_id])
+    title = @list.title
+
+    if @list.destroy
+      flash[:list] = "List was removed."
+      redirect_to root_path
+    else
+      flash[:error] = "Item couldn't be deleted.  Please try again."
+      redirect_to root_path
+    end
+
     respond_to do |format|
-      format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html
+      fotmat.js
     end
   end
 

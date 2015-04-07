@@ -27,6 +27,26 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @list = List.find(params[:list_id])
+    @item = Item.find(params[:id])
+    name = @item.name
+    authorize @item
+
+    if @item.destroy
+      flash[:notice] = "Item was removed."
+      redirect_to list_path(@list)
+    else
+      flash[:error] = "Item couldn't be deleted.  Please try again."
+      redirect_to list_path(@list)
+    end
+
+    respond_to do |format|
+      format.html
+      fotmat.js
+    end
+  end
+
 
 
   private
