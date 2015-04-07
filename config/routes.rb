@@ -1,15 +1,15 @@
 Blocitoff::Application.routes.draw do
   resources :lists
 
-  get 'items/index'
+  # get 'items/index'
 
-  get 'items/show'
+  # get 'items/show'
 
-  get 'items/create'
+  # get 'items/create'
 
-  get 'items/new'
+  # get 'items/new'
 
-  get 'items/edit'
+  # get 'items/edit'
 
 
 
