@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html
-      fotmat.js
+      format.js
     end
   end
 
