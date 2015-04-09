@@ -11,7 +11,7 @@ Blocitoff::Application.routes.draw do
 
   # get 'items/edit'
 
-  get 'assets/bootstrap'
+
 
 
 
@@ -26,7 +26,7 @@ Blocitoff::Application.routes.draw do
     root to: "users#show", as: :authenticated_root, via: :get
   end
 
-  unauthenticated do
+  unauthenticated :user do
     root 'welcome#index'
   end
 end
