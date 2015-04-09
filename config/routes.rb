@@ -11,6 +11,8 @@ Blocitoff::Application.routes.draw do
 
   # get 'items/edit'
 
+  get 'assets/bootstrap'
+
 
 
   devise_for :users
