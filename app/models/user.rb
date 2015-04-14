@@ -5,4 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :lists, dependent: :destroy
+
+  def full_name
+    "John Doe"  
+  end
+
+  def bio
+    "something interesting"
+  end
+
 end

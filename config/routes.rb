@@ -29,4 +29,9 @@ Blocitoff::Application.routes.draw do
   unauthenticated :user do
     root 'welcome#index'
   end
+
+  namespace :api do
+    resources :users, only: :index
+  end
+
 end
