@@ -63,15 +63,15 @@ class ListsController < ApplicationController
   # end
 
   def destroy
-    @list = List.find(params[:list_id])
+    @list = List.find(params[:id])
     title = @list.title
 
     if @list.destroy
       flash[:list] = "List was removed."
-      redirect_to root_path
+      # redirect_to root_path
     else
       flash[:error] = "Item couldn't be deleted.  Please try again."
-      redirect_to root_path
+      # redirect_to root_path
     end
 
     # respond_to do |format|
