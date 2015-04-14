@@ -32,6 +32,7 @@ Blocitoff::Application.routes.draw do
 
   namespace :api do
     resources :users, only: :index
+    resources :lists, only: :index
   end
 
 end
