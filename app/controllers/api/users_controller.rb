@@ -7,7 +7,7 @@ class Api::UsersController < ApiController
 
     users = User.all
 
-    render json: users, each_serializer: InsecureUserSerializer 
+    render json: users, each_serializer: UserSerializer 
   end
 
   # def index
