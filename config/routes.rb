@@ -30,10 +30,11 @@ Blocitoff::Application.routes.draw do
     root 'welcome#index'
   end
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     resources :users, only: :index
     resources :lists, only: :index
     resources :items, only: :index
   end
+
 
 end
