@@ -6,6 +6,11 @@ class ApiController < ActionController::Base
 
   private
 
+  def authenticated?
+# #2
+   authenticate_or_request_with_http_basic {|username, password| User.where( email: username, id: password).present? }
+  end
+
   # Error responses and before_action blocking work differently with Javascript requests.
   # Rather than using before_actions to authenticate actions, we suggest using
   # "guard clauses" like `permission_denied_error unless condition`

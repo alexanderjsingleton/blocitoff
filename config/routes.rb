@@ -36,4 +36,8 @@ Blocitoff::Application.routes.draw do
     resources :items, only: :index
   end
 
+  namespace :api, defaults: { format: :json } do
+     resources :users
+   end
+
 end

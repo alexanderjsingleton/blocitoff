@@ -1,4 +1,7 @@
 class Api::UsersController < ApiController
+  
+  before_action :authenticated?
+
   def index
     return permission_denied_error unless conditions_met
 
@@ -6,6 +9,11 @@ class Api::UsersController < ApiController
 
     render json: users, each_serializer: InsecureUserSerializer 
   end
+
+  # def index
+
+  #    render json: users, each_serializer: UserSerializer 
+  # end
 
   private
 
