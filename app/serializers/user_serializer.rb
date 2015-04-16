@@ -17,7 +17,7 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def password
-    object.encryted_password
+    object.encrypted_password
   end
 end
 

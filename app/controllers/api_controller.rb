@@ -6,10 +6,19 @@ class ApiController < ActionController::Base
 
   private
 
+#   def authenticated?
+# # #2
+#    authenticate_or_request_with_http_basic {|username, password| User.where( email: username, id: password).present? }
+#   end
+
   def authenticated?
-# #2
-   authenticate_or_request_with_http_basic {|username, password| User.where( email: username, id: password).present? }
+    authenticate_or_request_with_http_basic('Administration') do |email, password|
+      user = User.find_by_email(email)
+      user.valid_password?(password)
+    end
   end
+
+
 
   # Error responses and before_action blocking work differently with Javascript requests.
   # Rather than using before_actions to authenticate actions, we suggest using
